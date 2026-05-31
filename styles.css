@@ -1,0 +1,439 @@
+/* ——— Tokens (aligned with renatabuzhar.com) ——— */
+:root {
+  --color-bg: hsl(0, 0%, 97.25%);
+  --color-surface: #ffffff;
+  --color-text: hsl(203.48, 60.53%, 14.9%);
+  --color-accent: hsl(154.62, 10.48%, 48.63%);
+  --color-border: hsl(203.48, 20%, 88%);
+
+  --font-display: "Syne", system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
+
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+
+  --max-width: 87.5rem;
+  --page-padding: clamp(1.5rem, 6vw, 6rem);
+}
+
+/* ——— Reset & base ——— */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ——— Top bar ——— */
+.top-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-surface);
+}
+
+.top-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.75rem var(--page-padding);
+}
+
+.top-bar__logo img {
+  width: auto;
+  height: 2.5rem;
+  object-fit: contain;
+}
+
+.top-bar__nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.top-bar__link {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+
+.top-bar__link:hover,
+.top-bar__link:focus-visible {
+  color: var(--color-accent);
+  outline: none;
+}
+
+.top-bar__link--active {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+/* ——— Hero ——— */
+.hero {
+  padding: var(--space-lg) var(--page-padding) var(--space-2xl);
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.hero__image img {
+  width: 100%;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+.hero__role {
+  margin: 0 0 var(--space-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+.hero__headline {
+  margin: 0 0 var(--space-md);
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5.5vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.hero__headline strong {
+  font-weight: 700;
+}
+
+.hero__headline-accent {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.hero__body {
+  margin: 0;
+  max-width: 34rem;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+@media (min-width: 768px) {
+  .hero__inner {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: clamp(2rem, 5vw, 5rem);
+  }
+
+  .hero__image {
+    order: -1;
+  }
+}
+
+/* ——— Connect ——— */
+.connect {
+  padding: var(--space-2xl) var(--page-padding);
+  background-color: var(--color-surface);
+}
+
+.connect__inner {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.connect__title {
+  margin: 0 0 var(--space-sm);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.connect__lead {
+  margin: 0 0 var(--space-md);
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.connect__lead-accent {
+  color: var(--color-accent);
+}
+
+.connect__body {
+  margin: 0 0 var(--space-lg);
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+.connect__email {
+  display: inline-block;
+  font-size: 1.125rem;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+.connect__email:hover,
+.connect__email:focus-visible {
+  color: var(--color-accent);
+  outline: none;
+}
+
+/* ——— Footer ——— */
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg) var(--page-padding) var(--space-xl);
+  background-color: var(--color-surface);
+}
+
+.site-footer__copyright {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--color-text);
+  text-align: center;
+}
+
+.site-footer__linkedin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--color-text);
+  transition: color 0.2s;
+}
+
+.site-footer__linkedin:hover,
+.site-footer__linkedin:focus-visible {
+  color: var(--color-accent);
+  outline: none;
+}
+
+.site-footer__linkedin svg {
+  width: 1.375rem;
+  height: 1.375rem;
+  fill: currentColor;
+}
+
+/* ——— Projects page ——— */
+.projects-page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-xl) var(--page-padding) var(--space-2xl);
+}
+
+.projects-section {
+  margin-bottom: var(--space-2xl);
+}
+
+.projects-section__title {
+  margin: 0 0 var(--space-md);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.projects-section__title-accent {
+  color: var(--color-accent);
+}
+
+.projects-section__intro {
+  margin: 0 0 var(--space-lg);
+  max-width: 52rem;
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+.projects-section__label {
+  margin: 0 0 var(--space-lg);
+  font-size: 1.125rem;
+}
+
+.project-grid {
+  display: grid;
+  gap: var(--space-lg);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-grid--2 {
+  grid-template-columns: 1fr;
+}
+
+.project-grid--3 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .project-grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .project-grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .project-grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.project-card__media {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.project-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 6%;
+}
+
+.project-card__title {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.project-card__desc {
+  margin: 0 0 1.25rem;
+  flex: 1;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+.project-card__btn {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-surface);
+  background: var(--color-text);
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.project-card__btn:hover,
+.project-card__btn:focus-visible {
+  background: var(--color-accent);
+  outline: none;
+}
+
+/* Collection carousel-style row */
+.collection-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(220px, 280px);
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0 0 0.5rem;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.collection-card {
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: start;
+  background: var(--color-surface);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.collection-card__media {
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.collection-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.collection-card__btn {
+  display: inline-block;
+  margin: 4% 5% 5%;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-surface);
+  background: var(--color-text);
+  border-radius: 4px;
+  text-align: center;
+  transition: background 0.2s;
+}
+
+.collection-card__btn:not(.collection-card__btn--static):hover,
+.collection-card__btn:not(.collection-card__btn--static):focus-visible {
+  background: var(--color-accent);
+  outline: none;
+}
+
+.collection-card__btn--static {
+  cursor: default;
+}
